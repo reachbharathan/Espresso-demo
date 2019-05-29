@@ -1,19 +1,15 @@
 package com.example.kanthivelg.espresso;
 
-import android.Manifest;
-
 import com.squareup.spoon.Spoon;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 
 import androidx.test.espresso.Espresso;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.rule.GrantPermissionRule;
-import androidx.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -26,18 +22,11 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
-public class EspressoImageActivityTest {
+public class EspressoImageActivityTest extends BaseActivityTest {
 
     @Rule
     public ActivityTestRule<EspressoImageActivity> activityTestRule =
             new ActivityTestRule<>(EspressoImageActivity.class);
-
-    @Rule public GrantPermissionRule permissionRule =
-            GrantPermissionRule.grant(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-    @Rule public TestName name = new TestName();
-
-    private CustomFailureHandler customFailureHandler;
 
     @Before
     public void setUp() {
@@ -48,27 +37,38 @@ public class EspressoImageActivityTest {
     }
 
     @Test
-    public void testCoffeeFlow() {
+    public void testCoffeeFlowActivityHeader() {
+        //setting the method name so that on failure Test name will be displayed
         customFailureHandler.setMethodName(name.getMethodName());
+
+        //Test to check static contents
+        onView(withText("Espresso Image")).check(matches(isDisplayed()));
         onView(allOf(withId(R.id.preference), withText("Which one do you prefer....??")))
                 .check(matches(isDisplayed()));
+        onView(withId(R.id.teaImage)).check(matches(isDisplayed()));
+        onView(withId(R.id.coffeeImage)).check(matches(isDisplayed()));
+    }
 
-        onView(withId(R.id.teaImage))
-                .check(matches(isDisplayed()));
 
-        Spoon.screenshot(activityTestRule.getActivity(), "Before_coffee_Click");
+    @Test
+    public void testCoffeeFlow() {
+        customFailureHandler.setMethodName(name.getMethodName());
 
-        onView(withId(R.id.coffeeImage))
-                .check(matches(isDisplayed()))
-                .perform(click());
+        //Take screenshot before selecting the image
+        Spoon.screenshot(activityTestRule.getActivity(), "Before_image_click");
 
-        //Make assertions
+        //perform action
+        onView(withId(R.id.coffeeImage)).perform(click());
 
+
+        //Take screenshot after selecting the image
         Spoon.screenshot(activityTestRule.getActivity(), "After_coffee_Click");
 
+        //Make assertions for text to be displayed (positive scenario)
         onView(allOf(withId(R.id.preference), withText("Oh!! You Prefer Coffee")))
                 .check(matches(isDisplayed()));
 
+        //Make assertions for image not to be displayed
         onView(withId(R.id.teaImage))
                 .check(matches(not(isDisplayed())));
     }
@@ -76,25 +76,26 @@ public class EspressoImageActivityTest {
 
     @Test
     public void testTeaFlow() {
+        //setting the method name so that on failure Test name will be displayed
         customFailureHandler.setMethodName(name.getMethodName());
-        onView(allOf(withId(R.id.preference), withText("Which one do you prefer....??")))
+
+        //Take screenshot before selecting the image
+        Spoon.screenshot(activityTestRule.getActivity(), "Before_image_click");
+
+        //perform action
+        onView(withId(R.id.teaImage)).perform(click());
+
+
+        //Take screenshot after selecting the image
+        Spoon.screenshot(activityTestRule.getActivity(), "After_tea_Click");
+
+        //Make assertions for text to be displayed (positive scenario)
+        onView(allOf(withId(R.id.preference), withText("Oh!! You Prefer Green Tea")))
                 .check(matches(isDisplayed()));
 
-        onView(withId(R.id.coffeeImage))
-                .check(matches(isDisplayed()));
-
-        onView(withId(R.id.teaImage))
-                .check(matches(isDisplayed()))
-                .perform(click());
-
-        //Make assertions
-
-        onView(allOf(withId(R.id.preference), withText("Oh!! You Prefr Green Tea")))
-                .check(matches(isDisplayed()));
-
+        //Make assertions for image not to be displayed
         onView(withId(R.id.coffeeImage))
                 .check(matches(not(isDisplayed())));
-
     }
 
 }
