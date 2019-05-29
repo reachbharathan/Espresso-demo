@@ -24,7 +24,7 @@ class Adapter(private val data: ArrayList<Event>): RecyclerView.Adapter<Adapter.
 
         fun bind(event: Event) {
             view.title.text = event.title
-            view.count.text = event.songsCount.toString()
+            view.count.text = "Count: ${event.songsCount}"
         }
 
     }

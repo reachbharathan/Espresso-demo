@@ -12,6 +12,7 @@
     <string name="state">State:</string>
     <string name="dob">DOB:</string>
     <string name="register">Register</string>
+    <string name="other">Other</string>
     <string-array name="states_array">
         <item>Chennai</item>
         <item>Delhi</item>
