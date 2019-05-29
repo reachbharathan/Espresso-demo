@@ -33,6 +33,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.0'
     androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.14.2'
     androidTestImplementation 'com.squareup.spoon:spoon-client:1.7.1'
+    androidTestImplementation 'com.jraska:falcon:2.1.1'
+    androidTestImplementation 'com.jraska:falcon-spoon-compat:2.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {

@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 
+import com.jraska.falcon.Falcon;
 import com.squareup.spoon.Spoon;
 
 import org.hamcrest.Matcher;
+
+import java.io.File;
 
 import androidx.test.espresso.FailureHandler;
 import androidx.test.espresso.base.DefaultFailureHandler;
@@ -28,7 +31,8 @@ public class CustomFailureHandler implements FailureHandler {
         try {
             mDelegate.handle(error, viewMatcher);
         } catch (Exception e) {
-            Spoon.screenshot(activity, "Espresso_Assertion_Failed", className, methodName);
+            File file = Spoon.screenshot(activity, "Espresso_Assertion_Failed", className, methodName);
+            Falcon.takeScreenshot(activity,file);
             throw e;
         }
     }
