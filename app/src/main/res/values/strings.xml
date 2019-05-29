@@ -1,6 +1,21 @@
 <resources>
+
     <string name="app_name">Espresso</string>
     <string name="like_coffee">Oh!! You Prefer Coffee</string>
     <string name="like_green_tea">Oh!! You Prefer Green Tea</string>
     <string name="which_one_do_you_prefer">Which one do you prefer....??</string>
+    <string name="name">Name:</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="gender">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="state">State:</string>
+    <string name="dob">DOB:</string>
+    <string name="register">Register</string>
+    <string-array name="states_array">
+        <item>Chennai</item>
+        <item>Delhi</item>
+        <item>Mumbai</item>
+    </string-array>
+
 </resources>

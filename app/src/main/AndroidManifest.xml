@@ -13,20 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".EspressoBasicActivity">
+        <activity android:name=".HomeActivity" android:label="Espresso Demo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".EspressoRecyclerViewActivity" android:label="Espresso RecyclerView"/>
+
+        <activity android:name=".EspressoImageActivity" android:label="Espresso Image"/>
+
+        <activity android:name=".EspressoRadioSpinnerActivity" android:label="Radio Spinner Picker"/>
+
     </application>
 
 </manifest>
