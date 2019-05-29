@@ -26,11 +26,11 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
-public class EspressoBasicActivityTest {
+public class EspressoImageActivityTest {
 
     @Rule
-    public ActivityTestRule<EspressoBasicActivity> activityTestRule =
-            new ActivityTestRule<>(EspressoBasicActivity.class);
+    public ActivityTestRule<EspressoImageActivity> activityTestRule =
+            new ActivityTestRule<>(EspressoImageActivity.class);
 
     @Rule public GrantPermissionRule permissionRule =
             GrantPermissionRule.grant(Manifest.permission.WRITE_EXTERNAL_STORAGE);

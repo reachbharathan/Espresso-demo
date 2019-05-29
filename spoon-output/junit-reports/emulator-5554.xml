@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <testsuite name="com.example.kanthivelg.espresso.test" tests="3" failures="1" errors="0" skipped="0" time="6.748" timestamp="2019-05-26T18:10:34" hostname="localhost">
   <properties />
-  <testcase name="testTeaFlow" classname="com.example.kanthivelg.espresso.EspressoBasicActivityTest" time="1.744">
+  <testcase name="testTeaFlow" classname="com.example.kanthivelg.espresso.EspressoImageActivityTest" time="1.744">
     <failure>androidx.test.espresso.NoMatchingViewException: No views in hierarchy found matching: (with id: com.example.kanthivelg.espresso:id/preference and with text: is "Oh!! You Prefr Green Tea")
 
 View Hierarchy:
@@ -48,7 +48,7 @@ at androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandle
 at com.example.kanthivelg.espresso.CustomFailureHandler.handle(CustomFailureHandler.java:29)
 at androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:312)
 at androidx.test.espresso.ViewInteraction.check(ViewInteraction.java:297)
-at com.example.kanthivelg.espresso.EspressoBasicActivityTest.testTeaFlow(EspressoBasicActivityTest.java:93)
+at com.example.kanthivelg.espresso.EspressoImageActivityTest.testTeaFlow(EspressoBasicActivityTest.java:93)
 at java.lang.reflect.Method.invoke(Native Method)
 at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
 at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
@@ -84,6 +84,6 @@ at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:388)
 at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2075)
 </failure>
   </testcase>
-  <testcase name="testCoffeeFlow" classname="com.example.kanthivelg.espresso.EspressoBasicActivityTest" time="2.478" />
+  <testcase name="testCoffeeFlow" classname="com.example.kanthivelg.espresso.EspressoImageActivityTest" time="2.478" />
   <testcase name="testEventList" classname="com.example.kanthivelg.espresso.RecyclerViewTest" time="0.741" />
 </testsuite>

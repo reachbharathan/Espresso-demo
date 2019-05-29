@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:paddingStart="24dp"
+    android:background="@drawable/radio_back"
+    android:paddingEnd="24dp">
+
+    <Button
+        android:id="@+id/imageActivityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Image Selection Activity"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@color/cardview_dark_background"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center_vertical"/>
+
+    <Button
+        android:id="@+id/radioActivityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Radio Selection Activity"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@color/cardview_dark_background"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center_vertical"/>
+
+    <Button
+        android:id="@+id/recyclerViewActivityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recycler View Activity"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@color/cardview_dark_background"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center_vertical"/>
+
+</LinearLayout>

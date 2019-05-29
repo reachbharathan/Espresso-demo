@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
-class MainActivity : AppCompatActivity() {
+class EspressoRecyclerViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -11,8 +11,8 @@ import androidx.test.runner.AndroidJUnit4;
 public class RecyclerViewTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> activityTestRule =
-            new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<EspressoRecyclerViewActivity> activityTestRule =
+            new ActivityTestRule<>(EspressoRecyclerViewActivity.class);
 
 
     @Test
