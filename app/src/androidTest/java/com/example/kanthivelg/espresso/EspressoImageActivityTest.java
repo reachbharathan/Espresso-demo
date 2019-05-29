@@ -31,21 +31,15 @@ public class EspressoImageActivityTest {
 
     private CustomFailureHandler customFailureHandler;
 
-    @Rule public TestName name = new TestName();
-
     @Before
     public void setUp() {
         customFailureHandler = new CustomFailureHandler(
-                getInstrumentation().getTargetContext(),
-                activityTestRule.getActivity().getLocalClassName(), activityTestRule.getActivity());
+                getInstrumentation().getTargetContext(), activityTestRule.getActivity());
         Espresso.setFailureHandler(customFailureHandler);
     }
 
     @Test
     public void testCoffeeFlowActivityHeader() {
-        //setting the method name so that on failure Test name will be displayed
-        customFailureHandler.setMethodName(name.getMethodName());
-
         //Test to check static contents
         onView(withText("Espresso Image")).check(matches(isDisplayed()));
         onView(allOf(withId(R.id.preference), withText("Which one do you prefer....??")))
@@ -57,7 +51,6 @@ public class EspressoImageActivityTest {
 
     @Test
     public void testCoffeeFlow() {
-        customFailureHandler.setMethodName(name.getMethodName());
 
         //Take screenshot before selecting the image
         Spoon.screenshot(activityTestRule.getActivity(), "Before_image_click");
@@ -82,7 +75,6 @@ public class EspressoImageActivityTest {
     @Test
     public void testTeaFlow() {
         //setting the method name so that on failure Test name will be displayed
-        customFailureHandler.setMethodName(name.getMethodName());
 
         //Take screenshot before selecting the image
         Spoon.screenshot(activityTestRule.getActivity(), "Before_image_click");

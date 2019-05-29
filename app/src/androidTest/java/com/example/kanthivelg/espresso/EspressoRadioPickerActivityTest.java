@@ -42,21 +42,17 @@ public class EspressoRadioPickerActivityTest {
     @Rule public GrantPermissionRule permissionRule =
             GrantPermissionRule.grant(Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
-    @Rule public TestName name = new TestName();
-
     private CustomFailureHandler customFailureHandler;
 
     @Before
     public void setUp() {
         customFailureHandler = new CustomFailureHandler(
-                getInstrumentation().getTargetContext(),
-                activityTestRule.getActivity().getLocalClassName(), activityTestRule.getActivity());
+                getInstrumentation().getTargetContext(),activityTestRule.getActivity());
         Espresso.setFailureHandler(customFailureHandler);
     }
 
     @Test
     public void testRegisterFlow() {
-        customFailureHandler.setMethodName(name.getMethodName());
 
         // Type Name
 

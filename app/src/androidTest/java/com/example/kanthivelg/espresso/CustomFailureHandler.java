@@ -16,13 +16,10 @@ import androidx.test.espresso.base.DefaultFailureHandler;
 
 public class CustomFailureHandler implements FailureHandler {
     private final FailureHandler mDelegate;
-    private String className;
-    private String methodName = "";
     private Activity activity;
 
-    public CustomFailureHandler(Context targetContext, String className, Activity activity) {
+    public CustomFailureHandler(Context targetContext, Activity activity) {
         mDelegate = new DefaultFailureHandler(targetContext);
-        this.className = className;
         this.activity = activity;
     }
 
@@ -31,13 +28,10 @@ public class CustomFailureHandler implements FailureHandler {
         try {
             mDelegate.handle(error, viewMatcher);
         } catch (Exception e) {
-            File file = Spoon.screenshot(activity, "Espresso_Assertion_Failed", className, methodName);
+            File file = Spoon.screenshot(activity, "Espresso_Assertion_Failed");
             Falcon.takeScreenshot(activity,file);
             throw e;
         }
     }
 
-    public void setMethodName(String methodName) {
-        this.methodName = methodName;
-    }
 }
