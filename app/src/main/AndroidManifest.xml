@@ -26,7 +26,7 @@
 
         <activity android:name=".EspressoImageActivity" android:label="Espresso Image"/>
 
-        <activity android:name=".EspressoRadioSpinnerActivity" android:label="Radio Spinner Picker"/>
+        <activity android:name=".EspressoRadioPickerActivity" android:label="Radio Spinner Picker"/>
 
     </application>
 

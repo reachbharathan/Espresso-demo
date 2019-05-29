@@ -5,6 +5,7 @@ import com.squareup.spoon.Spoon;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 
 import androidx.test.espresso.Espresso;
@@ -22,11 +23,15 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
-public class EspressoImageActivityTest extends BaseActivityTest {
+public class EspressoImageActivityTest {
 
     @Rule
     public ActivityTestRule<EspressoImageActivity> activityTestRule =
             new ActivityTestRule<>(EspressoImageActivity.class);
+
+    private CustomFailureHandler customFailureHandler;
+
+    @Rule public TestName name = new TestName();
 
     @Before
     public void setUp() {
