@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.RadioButton
 import kotlinx.android.synthetic.main.radio_spinner_activity.*
 
-class EspressoRadioSpinnerActivity: AppCompatActivity() {
+class EspressoRadioPickerActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +15,7 @@ class EspressoRadioSpinnerActivity: AppCompatActivity() {
             val name =  nameEditText.text.toString()
             val selectedRadioButtonId = radioGroup.checkedRadioButtonId
             val gender = findViewById<RadioButton>(selectedRadioButtonId).text
-            val dob = "${dobDatePicker.dayOfMonth}:${dobDatePicker.month}:${dobDatePicker.year}"
+            val dob = "${dobDatePicker.dayOfMonth}:${dobDatePicker.month + 1}:${dobDatePicker.year}"
             val builder = AlertDialog.Builder(this)
 
             builder.setTitle("Registered")

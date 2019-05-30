@@ -23,7 +23,7 @@ class HomeActivity: AppCompatActivity() {
         }
 
         radioActivityButton.setOnClickListener {
-            val intent = Intent(this, EspressoRadioSpinnerActivity::class.java)
+            val intent = Intent(this, EspressoRadioPickerActivity::class.java)
             startActivity(intent)
         }
     }

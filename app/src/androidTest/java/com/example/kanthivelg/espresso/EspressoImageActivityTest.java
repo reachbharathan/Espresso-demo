@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import androidx.test.espresso.Espresso;
-import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -22,25 +22,23 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
-public class EspressoImageActivityTest extends BaseActivityTest {
+public class EspressoImageActivityTest {
 
     @Rule
     public ActivityTestRule<EspressoImageActivity> activityTestRule =
             new ActivityTestRule<>(EspressoImageActivity.class);
 
+    private CustomFailureHandler customFailureHandler;
+
     @Before
     public void setUp() {
         customFailureHandler = new CustomFailureHandler(
-                getInstrumentation().getTargetContext(),
-                activityTestRule.getActivity().getLocalClassName(), activityTestRule.getActivity());
+                getInstrumentation().getTargetContext(), activityTestRule.getActivity());
         Espresso.setFailureHandler(customFailureHandler);
     }
 
     @Test
     public void testCoffeeFlowActivityHeader() {
-        //setting the method name so that on failure Test name will be displayed
-        customFailureHandler.setMethodName(name.getMethodName());
-
         //Test to check static contents
         onView(withText("Espresso Image")).check(matches(isDisplayed()));
         onView(allOf(withId(R.id.preference), withText("Which one do you prefer....??")))
@@ -52,7 +50,6 @@ public class EspressoImageActivityTest extends BaseActivityTest {
 
     @Test
     public void testCoffeeFlow() {
-        customFailureHandler.setMethodName(name.getMethodName());
 
         //Take screenshot before selecting the image
         Spoon.screenshot(activityTestRule.getActivity(), "Before_image_click");
@@ -77,7 +74,6 @@ public class EspressoImageActivityTest extends BaseActivityTest {
     @Test
     public void testTeaFlow() {
         //setting the method name so that on failure Test name will be displayed
-        customFailureHandler.setMethodName(name.getMethodName());
 
         //Take screenshot before selecting the image
         Spoon.screenshot(activityTestRule.getActivity(), "Before_image_click");

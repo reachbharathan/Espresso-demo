@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'spoon'
 
 android {
     compileSdkVersion 28
@@ -32,6 +33,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test:rules:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.0'
     androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.14.2'
     androidTestImplementation 'com.squareup.spoon:spoon-client:1.7.1'
     androidTestImplementation('com.android.support.test.espresso:espresso-contrib:3.0.1') {
@@ -41,6 +43,9 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude module: 'recyclerview-v7'
     }
+    androidTestImplementation 'com.jraska:falcon:2.1.1'
+    androidTestImplementation 'com.jraska:falcon-spoon-compat:2.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
