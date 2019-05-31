@@ -1,8 +1,7 @@
 package com.example.kanthivelg.espresso;
 
 import android.Manifest;
-
-import androidx.test.rule.GrantPermissionRule;
+import android.support.test.rule.GrantPermissionRule;
 
 import org.junit.Rule;
 import org.junit.rules.TestName;

@@ -2,6 +2,8 @@ package com.example.kanthivelg.espresso;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.test.espresso.FailureHandler;
+import android.support.test.espresso.base.DefaultFailureHandler;
 import android.view.View;
 
 import com.jraska.falcon.Falcon;
@@ -11,8 +13,6 @@ import org.hamcrest.Matcher;
 
 import java.io.File;
 
-import androidx.test.espresso.FailureHandler;
-import androidx.test.espresso.base.DefaultFailureHandler;
 
 public class CustomFailureHandler implements FailureHandler {
     private final FailureHandler mDelegate;
